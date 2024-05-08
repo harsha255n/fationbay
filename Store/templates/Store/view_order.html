@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Order Details</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Order Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Customer Name</th>
+                <th>Quantity</th>
+                <th>Date</th>
+                <th>Address</th>
+                <!-- Add more headers for additional fields -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ dat.order_item.name}}</td>
+                <td>{{request.user}}</td>
+                <td>{{ data.quantity }}</td>
+                <td>{{ data.date }}</td>
+                <td>{{data.address}}</td>
+                <!-- Add more columns for additional fields -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+

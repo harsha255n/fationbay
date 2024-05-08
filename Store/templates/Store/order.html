@@ -1,0 +1,94 @@
+
+{%extends 'Store/1nav.html' %}
+{% load static %}
+
+{% block nav %}
+
+
+
+  <!-- <div class="card mb-3" style="width: 1200px; height:1300;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ data.product_image.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{data.name}}</h5>
+          <p class="card-text">{{data.description}}</p>
+          <p class="card-text"><small class="text-body-secondary">{{data.description}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="btn" style="background-color: darkgrey; text-align: end;">Add to cart</a>
+  <form action="" method="post">
+
+    {%csrf_token%}
+    {{form}}
+    <button type="submit">order</button>
+     </form> -->
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Order Page</title>
+         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+         <style>
+             .p-c {
+                 max-width: 800px;
+                 margin: 0 auto;
+             }
+             .p-i {
+                 width: 100%;
+                 max-width: 300px;
+                 height: auto;
+             }
+             .b-o {
+                 background-color: #007bff;
+                 color: white;
+             }
+         </style>
+     </head>
+     <body>
+         <div class="container">
+             <div class="row justify-content-center mt-5">
+                 <div class="col-md-10 p-c">
+                     <table class="table table-bordered">
+                         <tbody>
+                             <tr>
+                                 <th style="width: 40%;">Product Image:</th>
+                                 <td style="width: 60%;"><img src="{{ data.product_image.url }}" class="p-i" alt="Product Image"></td>
+                             </tr>
+                             <tr><th>product:</th><td>{{ data.category}}</td></tr>
+                             <tr><th>Name:</th><td>{{ data.name }}</td></tr>
+                             <tr><th>Description:</th><td>{{ data.description }}</td></tr>
+                             <tr><th>price:</th><td>{{ data.selling_price }}</td></tr>
+                             
+                             <tr>
+                                 <th>Order Details:</th>
+                                 <td colspan="2">
+                                     <form action="" method="post">
+                                         {% csrf_token %}
+                                         <div class="form-row">
+                                             <div class="col-md-6">{{ form.name.label_tag }} {{ form.name }}</div>
+                                             <div class="col-md-6">{{ form.email.label_tag }} {{ form.email }}</div>
+                                         </div>
+                                         <div class="form-group">{{ form.address.label_tag }} {{ form.address }}</div>
+                                         <div class="form-row"><div class="col-md-6">{{ form.quantity.label_tag }} {{ form.quantity }}</div></div>
+                                         <button type="submit" class="btn b-o btn-block">Place Order</button>
+                                     </form>
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     </body>
+     </html>
+     
+{% endblock nav %}

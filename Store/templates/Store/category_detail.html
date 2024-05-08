@@ -1,0 +1,108 @@
+
+{% extends 'Store/base.html' %}
+{% load static %}
+
+{% block nav %}
+<!-- 
+<div class="container">
+    <div class="h4 pb-2 mb-4 text-danger text-center border-bottom border-danger my-3">{{name.name}}</div>
+
+    <div class="row">
+        {% for i in product %}
+        <div class="col-md-3 mb-4">
+            <a href="#">
+                <div class="card">
+                    <img src="{{ i.product_image.url }}" class="card-img-top" alt="..." height="300px" width="400px">
+                    <div class="card-body text-center">
+                  
+                        <p class="card-text">{{i.name}}</p>
+
+                        
+                        <p class="card-text">{{i.original_price}}</p>
+                         <p class="card-text">{{i.selling_price}}</p>
+                    
+                    </div>
+                </div>
+           
+        </div>
+    </a>
+        {% endfor %}
+    </div>
+</div> -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>
+       {% block title %}
+       gdrgihij
+       {% endblock title %} 
+    </title>
+  </head>
+  <body>
+<!-- <div class="container">
+    <div class="h4 pb-2 mb-4 text-danger text-center border-bottom border-danger my-3">{{name.name}}</div>
+
+    <div class="row">
+        {% for i in product %}
+        <div class="col-md-3 mb-4">
+            <a href="{% url 'pro' i.id %}" style="text-decoration: none !important;">
+                <div class="card">
+                    <img src="{{ i.product_image.url }}" class="card-img-top" alt="..." height="300px" width="400px">
+                    <div class="card-body text-center">
+                       
+                        <p class="card-text" style="color: black; font-weight: bold; text-decoration: none !important;">{{i.name}}</p>
+                        
+                        
+                       
+                        <p class="card-text" style="color: rgb(114, 103, 103); font-weight: bold; text-decoration: line-through !important;">Rs:{{i.original_price}}/-</p>
+                        
+                    
+                        <p class="card-text" style="color: black; font-weight: bold; text-decoration: none !important;">Rs:{{i.selling_price}}/-</p>
+                        
+                        <a href="#" class="btn" style="background-color: darkgrey; text-align: end;">Buy</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
+<div class="container">
+    <div class="h4 pb-2 mb-4 text-danger text-center border-bottom border-danger my-3">{{name.name}}</div>
+
+    <div class="row">
+        {% for i in product %}
+        <div class="col-md-4 mb-4">
+            <a href="{% url 'pro' i.id %}" style="text-decoration: none !important;">
+                <div class="card d-flex">
+                    <div class="card-img-left">
+                        <img src="{{ i.product_image.url }}" class="card-img-top" alt="..." height="300px" width="400px">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="color: black; font-weight: bold; text-decoration: none !important;">{{i.name}}</p>
+                        <p class="card-text" style="color: rgb(114, 103, 103); font-weight: bold; text-decoration: line-through !important;">Rs:{{i.original_price}}/-</p>
+                        <p class="card-text" style="color: black; font-weight: bold; text-decoration: none !important;">Rs:{{i.selling_price}}/-</p>
+                        <a href="#" class="btn" style="background-color: darkgrey; text-align: end;">Buy</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
+
+{% endblock nav %}

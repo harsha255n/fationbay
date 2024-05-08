@@ -1,0 +1,56 @@
+{% extends 'Store/1nav.html' %}
+{% load static %}
+
+{% block nav %}
+
+<!-- <div class="card mb-3" style="max-width: 6000px; height:5000px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ pro.product_image.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{pro.name}}</h5>
+          <p class="card-text">{{pro.description}}</p>
+          <p class="card-text"><small class="text-body-secondary">only left {{pro.quantity}}</small></p>
+          <div class="input-group" style="width: 150px;">
+            <button class="input-group-text bg-Ligth text-Dark" name="" id=""><i class="fa-solid fa-plus"></i></button>
+            <input type="text" name="" id="" value="" class="form-select text-Dark">
+            <button class="input-group-text bg-Ligth  text-Dark" name="" id=""><i class="fa-solid fa-minus"></i></button>
+    
+        </div>
+          <p class="card-text" style="color: rgb(114, 103, 103); font-weight: bold; text-decoration: line-through !important;">Rs:{{pro.original_price}}/-</p>   
+                        
+                        <p class="card-text" style="color: black; font-weight: bold; text-decoration: none !important;">Rs:{{pro.selling_price}}/-</p>
+                        <a href="{% url 'order' pro.id %}"  class="btn" style="background-color: darkgrey; text-align: end;">Buy</a>
+                        <a href="{% url 'addcart' pro.id %}" class="btn" style="background-color: darkgrey; text-align: end;">Add to cart</a>
+        
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="card mb-3" style="max-width: 6000px; height:5000px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{ pro.product_image.url }}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{pro.name}}</h5>
+                <p class="card-text">{{pro.description}}</p>
+                <p class="card-text"><small class="text-body-secondary">Only {{pro.quantity}} left</small></p>
+                <div class="input-group" style="width: 150px;">
+                    <button class="input-group-text bg-Ligth text-Dark" name="" id=""><i class="fa-solid fa-plus"></i></button>
+                    <input type="text" name="" id="" value="" class="form-select text-Dark">
+                    <button class="input-group-text bg-Ligth  text-Dark" name="" id=""><i class="fa-solid fa-minus"></i></button>
+                </div>
+                <p class="card-text" style="color: rgb(114, 103, 103); font-weight: bold; text-decoration: line-through !important;">Rs:{{pro.original_price}}/-</p>   
+                <p class="card-text" style="color: black; font-weight: bold; text-decoration: none !important;">Rs:{{pro.selling_price}}/-</p>
+                <a href="{% url 'order' pro.id %}"  class="btn" style="background-color: darkgrey; text-align: end;">Buy</a>
+                <a href="{% url 'addcart' pro.id %}" class="btn" style="background-color: darkgrey; text-align: end;">Add to cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock nav %}
